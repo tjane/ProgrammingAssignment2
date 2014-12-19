@@ -34,7 +34,7 @@ cacheSolve <- function(x, ...) {
     return(inv)
   }
   data <- x$get()
-  I = matrix(rep(1,nrow(x)))
+  I = diag(nrow(x))
   inv <- solve(data,I,...)
   x$setinverse(inv)
   inv
